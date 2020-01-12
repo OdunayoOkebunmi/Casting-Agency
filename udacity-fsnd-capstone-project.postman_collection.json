@@ -1,0 +1,1164 @@
+{
+	"info": {
+		"_postman_id": "ba951b81-c514-406d-8708-d40c485c23e8",
+		"name": "udacity-fsnd-capstone-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "casting assisstant",
+			"item": [
+				{
+					"name": "Get Actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3ce39b5c-d1b1-42fc-a862-44ca23f5a9e3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actors array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUxYjA1ODEwY2ZlNzMwY2MxYjRlNWQwIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyNTkwLCJleHAiOjE1Nzg5MTg5OTAsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.WU0k3YpLuOYyQ2nmcwxUWNmmra9PKk22-lzTbcJpJgn_06hPCCPaE24fm54z7IxjxWmtplJDX6yoVxCNq9KYiZQMarBEJYlzOV-1MVZxtIkuY8PTjLMW0JqrY8NNBMXe0o4T2WpFY3RUrWiZE7Yo670WroYlCvr8_Kj3c5HTvDfGBRqsQsCFucGHVDHhQFa3pdJR4weHgF7Y1mLxhUjsn9a1oG-m5qqMibVRqfVz2_y5FR7n8e4IjCNa4w2sLCL6ZXlz0hbthfhXonILJf-DF0k-kthXL6Pv_wEhFajWY9dyAfnfblTfp9yLAl50ZmsKqy_DYQvdtg07nho08sxMSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d659c094-4430-4a99-9554-488e66101f2e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUxYjA1ODEwY2ZlNzMwY2MxYjRlNWQwIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyNTkwLCJleHAiOjE1Nzg5MTg5OTAsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.WU0k3YpLuOYyQ2nmcwxUWNmmra9PKk22-lzTbcJpJgn_06hPCCPaE24fm54z7IxjxWmtplJDX6yoVxCNq9KYiZQMarBEJYlzOV-1MVZxtIkuY8PTjLMW0JqrY8NNBMXe0o4T2WpFY3RUrWiZE7Yo670WroYlCvr8_Kj3c5HTvDfGBRqsQsCFucGHVDHhQFa3pdJR4weHgF7Y1mLxhUjsn9a1oG-m5qqMibVRqfVz2_y5FR7n8e4IjCNa4w2sLCL6ZXlz0hbthfhXonILJf-DF0k-kthXL6Pv_wEhFajWY9dyAfnfblTfp9yLAl50ZmsKqy_DYQvdtg07nho08sxMSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Merlin\",\n\t\"release_date\":\"2014-3-3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b0b2febd-b8c5-4403-b762-200f654f7de2",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "casting director",
+			"item": [
+				{
+					"name": "Get Actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b5e772cb-9713-4b5f-9aef-1b36867016d1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actors array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movies ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5801b7d5-7f85-4d23-a18e-a0908971e24d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Merlin\",\n\t\"release_date\":\"2014-3-3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "22cbb9f7-34b6-404a-b929-ac7a53c1aa50",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Merlin\",\n\t\"release_date\":\"2014-3-3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d4f674b1-8b68-45b7-96dd-b3e3ef94f956",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"James Blond\",\n\t\"age\":23,\n\t\"gender\":\"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9264e8cb-827f-4f35-8664-ee93be097340",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Witcher\",\n\t\"release_date\":\"2014-3-3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "602fcf90-4cd1-4596-933a-1ac68f303cf3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"James Blonder\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b0b2febd-b8c5-4403-b762-200f654f7de2",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWRmYTMxNWVhMDczNzkwZTdiYmY2ODA1IiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODMyMzQ3LCJleHAiOjE1Nzg5MTg3NDcsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZWRpdDphY3RvcnMiLCJlZGl0Om1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicG9zdDphY3RvcnMiXX0.MVgFhMMwzWikOfS7Dt5bWx1JqguJrhDtEoo6Pqowb56V-mDqrLatEduPxzYomAzdvpMMMVcoAQHz7kMA6DQoztzzkybzH2Md-4MH1TXtgpBQ9AaULOVtb5c-e0q7CPo2f1gQHoydtIg2siCjrtCCUnd_qrLWmgtSy2zo1Y1zcicQhXQApxH3N-ey7DMw3xzvTeAQ4GmGt8ZdN5Ex00J593-6GwzsYWhH1RQaeOgIy4lSWzevjSzCBWasPFfmjG5Ww7ODeww3UByhU5DvNlQhu9AmYraiO8aq23_JWhV4vXxHu-aSJy8KeA3CCPewjrsFnEWs28NG_wX4VA7JQw37CQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"James Blonder\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "executive director",
+			"item": [
+				{
+					"name": "Create movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "59728555-8081-4004-b0a2-497e63826568",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUwMWUxNzQ2MDhjMWEwZTc3YjY5NzcxIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODM2OTU4LCJleHAiOjE1Nzg5MjMzNTgsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImVkaXQ6YWN0b3JzIiwiZWRpdDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UWUFH0PUOgEt0vzko4YB0ncUeZuO-BwOq_GdfHP_Ll4EfvdcptY7ZNKu4ECfBiAQJTBlkKYAaheZb2RT2HTZbkd9yzd1Mnk4LjntBfzFTGq6HZ3HLWNFtR0wpN8x_sjLIM398A2mJFvk8HV1nrVCDiSjI3bmzSSwPwCDvAuCFfuzR6hXgzi8hJ8QDLDjcpS3E3XzrJmbnoav7tfO6dyMpXUSjqphT9erw-Fc6bdl0QqN25Uy70200Tzckna8Gbubt3oBi8wI2sQ9f2iclsn-2FaAoOD3oBRTpmHEEsA-Qkqwa3uEvcm9Holt5jpueEseURzh99HsriLW3xAvHXbVuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Merlin\",\n\t\"release_date\":\"2014-3-3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e994e613-306d-4872-892e-a5b193c2bca9",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUwMWUxNzQ2MDhjMWEwZTc3YjY5NzcxIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODM2OTU4LCJleHAiOjE1Nzg5MjMzNTgsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImVkaXQ6YWN0b3JzIiwiZWRpdDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UWUFH0PUOgEt0vzko4YB0ncUeZuO-BwOq_GdfHP_Ll4EfvdcptY7ZNKu4ECfBiAQJTBlkKYAaheZb2RT2HTZbkd9yzd1Mnk4LjntBfzFTGq6HZ3HLWNFtR0wpN8x_sjLIM398A2mJFvk8HV1nrVCDiSjI3bmzSSwPwCDvAuCFfuzR6hXgzi8hJ8QDLDjcpS3E3XzrJmbnoav7tfO6dyMpXUSjqphT9erw-Fc6bdl0QqN25Uy70200Tzckna8Gbubt3oBi8wI2sQ9f2iclsn-2FaAoOD3oBRTpmHEEsA-Qkqwa3uEvcm9Holt5jpueEseURzh99HsriLW3xAvHXbVuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"James Blond\",\n\t\"age\":23,\n\t\"gender\":\"male\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "dba3ae73-18d6-4681-9756-a5ebdb074fb7",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUwMWUxNzQ2MDhjMWEwZTc3YjY5NzcxIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODM2OTU4LCJleHAiOjE1Nzg5MjMzNTgsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImVkaXQ6YWN0b3JzIiwiZWRpdDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UWUFH0PUOgEt0vzko4YB0ncUeZuO-BwOq_GdfHP_Ll4EfvdcptY7ZNKu4ECfBiAQJTBlkKYAaheZb2RT2HTZbkd9yzd1Mnk4LjntBfzFTGq6HZ3HLWNFtR0wpN8x_sjLIM398A2mJFvk8HV1nrVCDiSjI3bmzSSwPwCDvAuCFfuzR6hXgzi8hJ8QDLDjcpS3E3XzrJmbnoav7tfO6dyMpXUSjqphT9erw-Fc6bdl0QqN25Uy70200Tzckna8Gbubt3oBi8wI2sQ9f2iclsn-2FaAoOD3oBRTpmHEEsA-Qkqwa3uEvcm9Holt5jpueEseURzh99HsriLW3xAvHXbVuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Witcher\",\n\t\"release_date\":\"2014-3-3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "525b9ddc-4097-4dae-968d-64f4108d1c44",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUwMWUxNzQ2MDhjMWEwZTc3YjY5NzcxIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODM2OTU4LCJleHAiOjE1Nzg5MjMzNTgsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImVkaXQ6YWN0b3JzIiwiZWRpdDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UWUFH0PUOgEt0vzko4YB0ncUeZuO-BwOq_GdfHP_Ll4EfvdcptY7ZNKu4ECfBiAQJTBlkKYAaheZb2RT2HTZbkd9yzd1Mnk4LjntBfzFTGq6HZ3HLWNFtR0wpN8x_sjLIM398A2mJFvk8HV1nrVCDiSjI3bmzSSwPwCDvAuCFfuzR6hXgzi8hJ8QDLDjcpS3E3XzrJmbnoav7tfO6dyMpXUSjqphT9erw-Fc6bdl0QqN25Uy70200Tzckna8Gbubt3oBi8wI2sQ9f2iclsn-2FaAoOD3oBRTpmHEEsA-Qkqwa3uEvcm9Holt5jpueEseURzh99HsriLW3xAvHXbVuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"James Blonder\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUwMWUxNzQ2MDhjMWEwZTc3YjY5NzcxIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODM2OTU4LCJleHAiOjE1Nzg5MjMzNTgsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImVkaXQ6YWN0b3JzIiwiZWRpdDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UWUFH0PUOgEt0vzko4YB0ncUeZuO-BwOq_GdfHP_Ll4EfvdcptY7ZNKu4ECfBiAQJTBlkKYAaheZb2RT2HTZbkd9yzd1Mnk4LjntBfzFTGq6HZ3HLWNFtR0wpN8x_sjLIM398A2mJFvk8HV1nrVCDiSjI3bmzSSwPwCDvAuCFfuzR6hXgzi8hJ8QDLDjcpS3E3XzrJmbnoav7tfO6dyMpXUSjqphT9erw-Fc6bdl0QqN25Uy70200Tzckna8Gbubt3oBi8wI2sQ9f2iclsn-2FaAoOD3oBRTpmHEEsA-Qkqwa3uEvcm9Holt5jpueEseURzh99HsriLW3xAvHXbVuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"James Blonder\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUwMWUxNzQ2MDhjMWEwZTc3YjY5NzcxIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODM2OTU4LCJleHAiOjE1Nzg5MjMzNTgsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImVkaXQ6YWN0b3JzIiwiZWRpdDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UWUFH0PUOgEt0vzko4YB0ncUeZuO-BwOq_GdfHP_Ll4EfvdcptY7ZNKu4ECfBiAQJTBlkKYAaheZb2RT2HTZbkd9yzd1Mnk4LjntBfzFTGq6HZ3HLWNFtR0wpN8x_sjLIM398A2mJFvk8HV1nrVCDiSjI3bmzSSwPwCDvAuCFfuzR6hXgzi8hJ8QDLDjcpS3E3XzrJmbnoav7tfO6dyMpXUSjqphT9erw-Fc6bdl0QqN25Uy70200Tzckna8Gbubt3oBi8wI2sQ9f2iclsn-2FaAoOD3oBRTpmHEEsA-Qkqwa3uEvcm9Holt5jpueEseURzh99HsriLW3xAvHXbVuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d11abc4f-290a-4519-9257-28d0393513d9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains actors array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.actors).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUwMWUxNzQ2MDhjMWEwZTc3YjY5NzcxIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODM2OTU4LCJleHAiOjE1Nzg5MjMzNTgsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImVkaXQ6YWN0b3JzIiwiZWRpdDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UWUFH0PUOgEt0vzko4YB0ncUeZuO-BwOq_GdfHP_Ll4EfvdcptY7ZNKu4ECfBiAQJTBlkKYAaheZb2RT2HTZbkd9yzd1Mnk4LjntBfzFTGq6HZ3HLWNFtR0wpN8x_sjLIM398A2mJFvk8HV1nrVCDiSjI3bmzSSwPwCDvAuCFfuzR6hXgzi8hJ8QDLDjcpS3E3XzrJmbnoav7tfO6dyMpXUSjqphT9erw-Fc6bdl0QqN25Uy70200Tzckna8Gbubt3oBi8wI2sQ9f2iclsn-2FaAoOD3oBRTpmHEEsA-Qkqwa3uEvcm9Holt5jpueEseURzh99HsriLW3xAvHXbVuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/actors",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b4589aba-bbb4-478e-8119-4e7e41faf9a3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains movies array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.movies).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik9ESTVRVVpET1RJeE16VTVNalpFUkVZeVJrRkdRME15T0RsRVJURkNOVFkxUlVFeU9ERTFNdyJ9.eyJpc3MiOiJodHRwczovL2Rldi1wYWkwbGdjZy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWUwMWUxNzQ2MDhjMWEwZTc3YjY5NzcxIiwiYXVkIjoic2VydmVyIiwiaWF0IjoxNTc4ODM2OTU4LCJleHAiOjE1Nzg5MjMzNTgsImF6cCI6InRXSWZLb0MzM0tKdVl1ODl3V0Q3Y1Z4eXJLTEpxRjc1Iiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImVkaXQ6YWN0b3JzIiwiZWRpdDptb3ZpZXMiLCJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyIsInBvc3Q6YWN0b3JzIiwicG9zdDptb3ZpZXMiXX0.UWUFH0PUOgEt0vzko4YB0ncUeZuO-BwOq_GdfHP_Ll4EfvdcptY7ZNKu4ECfBiAQJTBlkKYAaheZb2RT2HTZbkd9yzd1Mnk4LjntBfzFTGq6HZ3HLWNFtR0wpN8x_sjLIM398A2mJFvk8HV1nrVCDiSjI3bmzSSwPwCDvAuCFfuzR6hXgzi8hJ8QDLDjcpS3E3XzrJmbnoav7tfO6dyMpXUSjqphT9erw-Fc6bdl0QqN25Uy70200Tzckna8Gbubt3oBi8wI2sQ9f2iclsn-2FaAoOD3oBRTpmHEEsA-Qkqwa3uEvcm9Holt5jpueEseURzh99HsriLW3xAvHXbVuA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"Merlin\",\n\t\"release_date\":\"2014-3-3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/movies",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
