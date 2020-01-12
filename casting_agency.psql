@@ -1,0 +1,53 @@
+-- -------------------------------------------------------------
+--
+-- Database: casting_agency
+-- Generation Time: 2020-01-12 15:44:15.6750
+-- -------------------------------------------------------------
+-- This script only contains the table creation statements and does not fully represent the table in the database. It's still missing: indices, triggers. Do not use it as a backup.
+-- Sequence and defined type
+CREATE SEQUENCE IF NOT EXISTS "Actors_id_seq";
+-- Table Definition
+CREATE TABLE "public"."Actors" (
+  "id" int4 NOT NULL DEFAULT nextval('"Actors_id_seq"' :: regclass),
+  "name" varchar NOT NULL,
+  "age" int4 NOT NULL,
+  "gender" varchar NOT NULL,
+  PRIMARY KEY ("id")
+);
+-- This script only contains the table creation statements and does not fully represent the table in the database. It's still missing: indices, triggers. Do not use it as a backup.
+-- Sequence and defined type
+CREATE SEQUENCE IF NOT EXISTS "Movies_id_seq";
+-- Table Definition
+CREATE TABLE "public"."Movies" (
+  "id" int4 NOT NULL DEFAULT nextval('"Movies_id_seq"' :: regclass),
+  "title" varchar NOT NULL,
+  "release_date" timestamp NOT NULL,
+  PRIMARY KEY ("id")
+);
+INSERT INTO "public"."Actors" ("id", "name", "age", "gender")
+VALUES
+  ('1', 'James Blonder', '23', 'male');
+INSERT INTO "public"."Actors" ("id", "name", "age", "gender")
+VALUES
+  ('2', 'James Blonder', '23', 'male');
+INSERT INTO "public"."Actors" ("id", "name", "age", "gender")
+VALUES
+  ('3', 'James Blond', '23', 'male');
+INSERT INTO "public"."Actors" ("id", "name", "age", "gender")
+VALUES
+  ('4', 'James Blond', '23', 'male');
+INSERT INTO "public"."Actors" ("id", "name", "age", "gender")
+VALUES
+  ('5', 'James Blond', '23', 'male');
+INSERT INTO "public"."Movies" ("id", "title", "release_date")
+VALUES
+  ('1', 'Witcher', '2019-02-02 00:00:00');
+INSERT INTO "public"."Movies" ("id", "title", "release_date")
+VALUES
+  ('2', 'Merlin', '2014-03-03 00:00:00');
+INSERT INTO "public"."Movies" ("id", "title", "release_date")
+VALUES
+  ('3', 'Merlin', '2014-03-03 00:00:00');
+INSERT INTO "public"."Movies" ("id", "title", "release_date")
+VALUES
+  ('4', 'Merlin', '2014-03-03 00:00:00');
