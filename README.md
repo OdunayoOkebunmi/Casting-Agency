@@ -54,7 +54,7 @@ To run the server for test, execute:
 
 ```bash
 export FLASK_APP=app.py
-export FLASK_ENV=development
+export FLASK_ENV=test
 flask run
 ```
 
